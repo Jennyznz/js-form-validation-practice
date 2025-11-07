@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Custom Form Validation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <form action="" method="post" novalidate>
+        <h1>Form</h1>
+        <div>
+            <label for="email">Email</label> <br>
+            <input type="email" id="email">
+        </div>
+        <br>
+        <div>
+            <label for="country">Country</label> <br>
+            <select id="country">
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="mx">Mexico</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="postal-code">Postal Code</label> <br>
+            <input type="text" id="postal-code">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password</label> <br>
+            <input type="password" id="password">
+        </div>
+        <br>
+        <div>
+            <label for="password-confirmation">Confirm Password</label> <br>
+            <input type="password" id="password-confirmation">
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
     <script src="main.js"></script>
 </body>
 </html>
