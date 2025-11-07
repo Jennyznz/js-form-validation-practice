@@ -25,18 +25,22 @@
         </div>
         <br>
         <div>
-            <label for="postal-code">Postal Code</label> <br>
-            <input type="text" id="postal-code">
+            <label for="postal">Postal Code</label> <br>
+            <input type="text" id="postal" pattern="^d{5}(-\d{4}?$)">
+            <span id="postal-error" class="error" aria-live="polite"></span>
+
         </div>
         <br>
         <div>
-            <label for="password">Password</label> <br>
-            <input type="password" id="password">
+            <label for="pwd">Password</label> <br>
+            <input type="password" id="pwd" minLength="8">
+            <span id="pwd-error" class="error" aria-live="polite"></span>
         </div>
         <br>
         <div>
-            <label for="password-confirmation">Confirm Password</label> <br>
-            <input type="password" id="password-confirmation">
+            <label for="pwd-confirm">Confirm Password</label> <br>
+            <input type="password" id="pwd-confirm">
+            <span id="pwd-confirm-error" class="error" aria-live="polite"></span>
         </div>
         <br>
         <button type="submit" id="submit-btn">Submit</button>
