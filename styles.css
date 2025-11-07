@@ -12,3 +12,9 @@
 .error.active {
     padding: 0.3em;
 }
+
+input:invalid:focus {
+    border-color: red;
+    background-color: #ffdddd;
+    outline: none;
+}
