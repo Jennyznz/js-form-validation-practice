@@ -10,20 +10,28 @@ const pwdConfirm = document.getElementById('pwd-confirm');
 const pwdConfirmErr = document.getElementById('pwd-confirm-error');
 const submitBtn = document.getElementById('submit-btn');
 
-email.addEventListener('input', () => {
-    checkEmail();
+['blur', 'input'].forEach(e => {
+    email.addEventListener(e, () => {
+        checkEmail();
+    });
 });
 
-postal.addEventListener('input', () => {
-    checkPostal();
+['blur', 'input'].forEach(e => {
+    postal.addEventListener(e, () => {
+        checkPostal();
+    });
 });
 
-pwd.addEventListener('input', () => {
-    checkPwd();
+['blur', 'input'].forEach(e => {
+    pwd.addEventListener(e, () => {
+        checkPwd();
+    });
 });
 
-pwdConfirm.addEventListener('input', () => {
-    checkPwdConfirm();
+['blur', 'input'].forEach(e => {
+    pwdConfirm.addEventListener(e, () => {
+        checkPwdConfirm();
+    });
 });
 
 submitBtn.addEventListener('click', () => {
