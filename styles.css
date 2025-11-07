@@ -1,0 +1,14 @@
+.error {
+    padding: 0;
+    margin-left: 10px;
+
+    font-size: medium;
+    color: white;
+    background-color: red;
+    border-radius: 0 10px 10px 0;
+
+}
+
+.error.active {
+    padding: 0.3em;
+}
