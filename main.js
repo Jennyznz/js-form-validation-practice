@@ -11,44 +11,63 @@ const pwdConfirmErr = document.getElementById('pwd-confirm-error');
 const submitBtn = document.getElementById('submit-btn');
 
 email.addEventListener('input', () => {
+    checkEmail();
+});
+
+postal.addEventListener('input', () => {
+    checkPostal();
+});
+
+pwd.addEventListener('input', () => {
+    checkPwd();
+});
+
+pwdConfirm.addEventListener('input', () => {
+    checkPwdConfirm();
+});
+
+submitBtn.addEventListener('click', () => {
+    checkEmail();
+    checkPostal();
+    checkPwd();
+    checkPwdConfirm();
+});
+
+function checkEmail() {
     if (email.validity.valid) {
         emailErr.textContent = '';
         emailErr.className = 'error'; // Removes `active` class, which hides the error message
     } else {
         showError('email');
     }
-});
+}
 
-postal.addEventListener('input', () => {
+function checkPostal() {
     if (postal.validity.valid) {
         postalErr.textContent = '';
         postalErr.className = 'error'; // Removes `active` class, which hides the error message
     } else {
         showError('postal');
     }
-});
+}
 
-pwd.addEventListener('input', () => {
+function checkPwd() {
     if (pwd.validity.valid) {
         pwdErr.textContent = '';
         pwdErr.className = 'error'; // Removes `active` class, which hides the error message
     } else {
         showError('password');
     }
-});
+}
 
-pwdConfirm.addEventListener(('input', 'blur'), () => {
-    if (pwdConfirm.value === pwd.value) {
+function checkPwdConfirm() {
+    if ((pwdConfirm.validity.valid) && (pwdConfirm.value === pwd.value)) {
         pwdConfirmErr.textContent = '';
         pwdConfirmErr.className = 'error'; // Removes `active` class, which hides the error message
     } else {
         showError('password confirmation');
     }
-});
-
-submitBtn.addEventListener('click', () => {
-
-});
+}
 
 function showError(element) {
     if (element === 'email') {
@@ -88,7 +107,12 @@ function showError(element) {
         pwdErr.className = 'error active';
     }
     if (element === 'password confirmation') {
-        pwdConfirmErr.textContent = "Does not match password.";
+        if (pwdConfirm.validity.valueMissing) {
+            pwdConfirmErr.textContent = "Please confirm password.";
+        // Input not numbers only
+        } else {
+            pwdConfirmErr.textContent = "Does not match password.";
+        }
 
         // Add active class to display error
         pwdConfirmErr.className = 'error active';
